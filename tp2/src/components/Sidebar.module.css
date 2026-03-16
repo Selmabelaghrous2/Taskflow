@@ -1,0 +1,45 @@
+.sidebar {
+  width: 240px;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  transition: margin-left 0.2s ease, opacity 0.2s ease;
+  overflow-y: auto;
+}
+
+.closed {
+  margin-left: -240px;
+  opacity: 0;
+}
+
+.open {
+  margin-left: 0;
+  opacity: 1;
+}
+
+.title {
+  font-size: 1rem;
+  padding: 1rem 1rem 0.5rem;
+  color: #666;
+}
+
+.list {
+  list-style: none;
+  padding: 0 0.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 6px;
+  cursor: default;
+  color: #333;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
