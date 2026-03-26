@@ -1,0 +1,54 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  border-right: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  transition: margin-left 0.3s ease, opacity 0.3s ease;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  z-index: 100;
+  padding: 20px;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.hidden {
+  margin-left: -240px;
+  opacity: 0;
+}
+
+.sidebar.visible {
+  margin-left: 0;
+  opacity: 1;
+}
+
+.projectList {
+  margin-top: 20px;
+}
+
+.projectItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.projectItem:hover {
+  background-color: #f5f5f5;
+}
+
+.projectColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.projectName {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
