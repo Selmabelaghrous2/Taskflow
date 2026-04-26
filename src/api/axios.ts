@@ -1,7 +1,18 @@
-import axios from 'axios';
+import axios from "axios";
+
 const api = axios.create({
-baseURL: 'http://localhost:4000',
-headers: { 'Content-Type': 'application/json' },
-timeout: 5000,
+  baseURL: "http://localhost:4000",
+  headers: { "Content-Type": "application/json" },
+  timeout: 5000,
 });
+
+// Function to set JWT token in Authorization header
+export function setAuthToken(token: string | null) {
+  if (token) {
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  } else {
+    delete api.defaults.headers.common["Authorization"];
+  }
+}
+
 export default api;

@@ -1,16 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useAuth } from '../features/auth/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../features/auth/authSlice';
 import api from '../api/axios';
 import Header from '../component/Header';
 import styles from './ProjectDetail.module.css';
+import type { RootState } from '../store';
 
 interface Project { id: string; name: string; color: string; }
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { state: authState, dispatch } = useAuth();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state: RootState) => state.auth);
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -21,6 +24,10 @@ export default function ProjectDetail() {
       .finally(() => setLoading(false));
   }, [id, navigate]); // Fixed: added id and navigate as dependencies
 
+  const handleLogout = useCallback(() => {
+    dispatch(logout());
+  }, [dispatch]);
+
   if (loading) return <div className={styles.loading}>Chargement...</div>;
   if (!project) return null;
 
@@ -29,8 +36,8 @@ export default function ProjectDetail() {
       <Header
         title="TaskFlow"
         onMenuClick={() => navigate('/dashboard')}
-        userName={authState.user?.name} // Fixed: added optional chaining
-        onLogout={() => dispatch({ type: 'LOGOUT' })}
+        userName={user?.name}
+        onLogout={handleLogout}
       />
       <main className={styles.main}>
         <div className={styles.header}>
