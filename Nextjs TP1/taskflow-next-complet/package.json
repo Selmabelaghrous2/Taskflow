@@ -1,0 +1,27 @@
+{
+  "name": "taskflow-next-complet",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "server": "json-server --watch db.json --port 4000",
+    "dev:all": "concurrently \"npm run server\" \"npm run dev\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "^20.19.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "concurrently": "^9.1.2",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.30",
+    "json-server": "^1.0.0-beta.3",
+    "next": "^14.2.30",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {}
+}

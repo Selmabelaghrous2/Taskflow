@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Refonte interface TaskFlow",
+      "color": "#3498db"
+    },
+    {
+      "id": "2",
+      "name": "Application mobile interne",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "3",
+      "name": "Automatisation reporting",
+      "color": "#1B8C3E"
+    }
+  ]
+}

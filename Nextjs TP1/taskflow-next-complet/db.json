@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Administrateur TaskFlow",
+      "email": "admin@taskflow.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Aya Challal",
+      "email": "aya@taskflow.com",
+      "password": "123456"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Application mobile TaskFlow",
+      "color": "#1B8C3E",
+      "description": "Projet principal de gestion collaborative des tâches et des projets.",
+      "status": "En cours",
+      "members": ["Aya", "Youssef", "Hamza"]
+    },
+    {
+      "id": "2",
+      "name": "Refonte Dashboard",
+      "color": "#2563EB",
+      "description": "Amélioration de l’interface dashboard avec une meilleure visibilité des projets.",
+      "status": "Planifié",
+      "members": ["Sara", "Omar"]
+    },
+    {
+      "id": "3",
+      "name": "Module Authentification",
+      "color": "#F97316",
+      "description": "Gestion de la connexion utilisateur et de la redirection vers le dashboard.",
+      "status": "Terminé",
+      "members": ["Ilyas", "Aya"]
+    }
+  ]
+}
